@@ -59,7 +59,7 @@
                             <a href="index.aspx" class="nav-item nav-link active">Home</a>
                             <a href="product-list.aspx" class="nav-item nav-link">Products</a>
                             <a href="product-detail.aspx" class="nav-item nav-link">Product Detail</a>
-                            <a href="cart.html" class="nav-item nav-link">Cart</a>
+                            <a href="cart.aspx" class="nav-item nav-link">Cart</a>
                             <a href="checkout.aspx" class="nav-item nav-link">Checkout</a>
                             <a href="my-account.aspx" class="nav-item nav-link">My Account</a>
                             <div class="nav-item dropdown">
@@ -67,7 +67,7 @@
                                 <div class="dropdown-menu">
                                     <a href="wishlist.aspx" class="dropdown-item">Wishlist</a>
                                     <a href="login.aspx" class="dropdown-item">Login & Register</a>
-                                    <a href="contact.html" class="dropdown-item">Contact Us</a>
+                                    <a href="contact.aspx" class="dropdown-item">Contact Us</a>
                                 </div>
                             </div>
                         </div>
