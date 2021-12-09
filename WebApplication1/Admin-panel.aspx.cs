@@ -13,7 +13,7 @@ namespace WebApplication1
     public partial class admin : System.Web.UI.Page
     {
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
-        string Guid = new Guid().ToString();
+       // string Guid = new Guid().ToString();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -35,13 +35,14 @@ namespace WebApplication1
                 int flag = dal.AddProduct(ProductID, ProductName, Price,Path);
                 if (flag == 1)
                 {
-                    Response.Write("<script>alert('Product Already Exist:');</script>");
+                    Response.Write("<script>alert('Error');</script>");
                     return;
                 }
                 else if (flag == 2)
                 {
-                    Response.Redirect("Admin-panel.aspx");
                     Response.Write("<script>alert('Successfully Added the product');</script>");
+                    Response.Redirect("Admin-panel.aspx");
+                   
                 }
                 clearAddUpdate();
 
@@ -63,10 +64,15 @@ namespace WebApplication1
                 string Price = TextBox52.Text.Trim().ToString();
                 string Path = CheckImageUpload();
                 int flag = dal.UpdateProduct(ProductID, ProductName, Price, Path);
-                if (flag == 2)
+                if (flag == 1)
+                {
+                    Response.Write("<script>alert('Error');</script>");
+                    return;
+                }
+                else if (flag == 2)
                 {
                     Response.Redirect("Admin-panel.aspx");
-                    Response.Write("<script>alert('Successfully Updated the pproduct');</script>");
+                    Response.Write("<script>alert('Successfully Updated the product');</script>");
                 }
                 clearAddUpdate();
 
@@ -83,13 +89,19 @@ namespace WebApplication1
             else
             {
                 string ProductID = TextBox53.Text.Trim().ToString();
-                int flag = dal.RemoveProduct(ProductID);
-                if (flag == 2)
+                int flag = dal.RemoveProduct_(ProductID);
+                if (flag == 1)
                 {
-                    Response.Redirect("Admin-panel.aspx");
-                    Response.Write("<script>alert('Successfully Remove the pproduct');</script>");
+                    Response.Write("<script>alert('Error');</script>");
+                    return;
                 }
-                clearAddUpdate();
+                else if (flag == 2)
+                {
+                    Response.Write("<script>alert('Successfully Remove the pproduct');</script>");
+                    Response.Redirect("Admin-panel.aspx");
+                   
+                }
+                clearRemove();
 
             }
         }
@@ -108,7 +120,7 @@ namespace WebApplication1
         {
             TextBox50 = TextBox51 = TextBox52 = null;
         }
-        private string CheckImageUpload()
+        protected string CheckImageUpload()
         {
             string SavePath = "";
             if (FileUpload1.HasFile)
@@ -118,7 +130,7 @@ namespace WebApplication1
                 if (extension == ".jpg" || extension == ".png" || extension == ".jpeg")
                 {
                     string path = Server.MapPath("img\\");
-                    string imageName = Guid + FileUpload1.FileName;
+                    string imageName =FileUpload1.FileName;
                     FileUpload1.SaveAs(path + imageName);
                     SavePath = "img\\" + imageName;
                 }
@@ -145,6 +157,11 @@ namespace WebApplication1
         {
             TextBox53 = null;
         }
-
+        protected void Logout_Click(object sender, EventArgs e)
+        {
+            Session["E-mail"] = null;
+            Session["Password"] = null;
+            Response.Redirect("index.aspx");
+        }
     }
 }

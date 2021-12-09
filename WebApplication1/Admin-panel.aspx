@@ -49,6 +49,9 @@
                                  <div class="col-md-6">
                                      <asp:Button ID="Remove_Product" class="btn" runat="server" Text="Remove Product" OnClick="Remove_Product_Click"/>
                                 </div>
+                                <div class="col-md-6">
+                                     <asp:Button ID="Logout" class="btn" runat="server" Text="Logout Admin" OnClick="Logout_Click"/>
+                                </div>
                                   </div>
                               </div>
                             </div>

@@ -4,18 +4,33 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+#pragma warning restore CS0219 // Variable is assigned but its value is never used
+#pragma warning disable CS0219 // Variable is assigned but its value is never used
 namespace WebApplication1
 {
     public partial class Site1 : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            string str = "admin@gmail.com";
+            string str1 = "admin";
             if (Session["E-mail"] != null && Session["Password"] != null)
             {
-               LinkButton11.Visible = false;
-            }else
+                LinkButton11.Visible = false;
+                if (Session["E-mail"].ToString() != str && Session["Password"].ToString() != str1)
+                {
+                    LinkButton12.Visible = false;
+                }
+                else
+                {
+                    LinkButton11.Visible = false;
+                    LinkButton6.Visible = false;
+                }
+            }
+            else
             {
+                LinkButton12.Visible = false;
                 LinkButton4.Visible = false;
                 LinkButton5.Visible = false;
                 LinkButton6.Visible = false;
@@ -74,6 +89,11 @@ namespace WebApplication1
         protected void LinkButton8_Click(object sender, EventArgs e)
         {
             Response.Redirect("login.aspx");
+        }
+
+        protected void LinkButton12_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Admin-panel.aspx");
         }
     }
 }

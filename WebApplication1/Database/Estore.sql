@@ -1,7 +1,7 @@
-go
-Create Database ClothingDB;
-go
-USE ClothingDB;
+GO
+create database Estore;
+GO
+USE Estore;
 go
 CREATE Table Login_Register(First_Name varchar(20) not null,
 Last_Name varchar(20) not null,
@@ -10,9 +10,10 @@ MobileNo varchar(20),
 [Password] varchar(8) not null
 );
 go
+go
 CREATE Table Product(ProductID varchar(10) not null  Primary Key,
 ProductName varchar(20) not null,
-Price int not null,
+Price int,
 imgpath varchar(100) not null,
 Quantity int not null
 );
@@ -27,17 +28,17 @@ Create Procedure SignIn
 		begin
 			Insert Login_Register (First_Name,Last_Name,Email,MobileNo,[Password]) values (@First_Name,@Last_Name,@Email,@MobileNo,@Pass);
 		end
-Select * from Login_Register
 go
 Create Procedure Login_
-@Email nchar(50),
-@Pass varchar(8)
-as 
+	@Email varchar(50),
+	@Password varchar(8)
+	as
 	begin
-	Select * from Login_Register where Email=@Email and [Password]=@Pass
+		select Email,[Password] from Login_Register where Email=@Email and [Password]=@Password;
 	end
-GO
-Create Procedure AddProduct
+
+go
+Create Procedure AddProduct_
 	@ProductID varchar(10),
 	@ProductName varchar(20),
 	@Price int,
@@ -47,7 +48,7 @@ Create Procedure AddProduct
 		begin
 			Insert Product(ProductID,ProductName,Price,imgpath,Quantity) values (@ProductID,@ProductName,@Price,@imgpath,@Quantity);
 		end
-
+go
 Create Procedure UpdateProduct
 	@ProductID varchar(10),
 	@ProductName varchar(20),
@@ -55,13 +56,17 @@ Create Procedure UpdateProduct
 	@imgpath varchar(100)
 	as 
 		begin
-			Update Product set ProductName=@ProductName where ProductID=@ProductID
-			Update Product set Price=@Price where ProductID=@ProductID
-			Update Product set imgpath=@imgpath where ProductID=@ProductID
+			Update Product set ProductName=@ProductName where ProductID=@ProductID;
+			Update Product set Price=@Price where ProductID=@ProductID;
+			Update Product set imgpath=@imgpath where ProductID=@ProductID;
 		end
+go
 Create Procedure RemoveProduct
 @ProductID varchar(10)
 as 
 begin
 delete from Product where ProductID=@ProductID;
 end
+go
+select * from Product
+select * from Login_Register

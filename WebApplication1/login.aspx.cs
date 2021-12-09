@@ -34,10 +34,6 @@ namespace WebApplication1
             {
                 Response.Write("<script>alert('Invalid credentials');</script>");
             }
-
-
-
-
         }
         protected void Button_SignUp_Click(object sender, EventArgs e)
         {
@@ -70,8 +66,9 @@ namespace WebApplication1
                 }
                 else if (flag == 2)
                 {
-                    Response.Redirect("index.aspx");
                     Response.Write("<script>alert('Successfully Signed Up. Login to enjoy more features:)');</script>");
+                    Response.Redirect("index.aspx");
+                   
                 }
                 clear();
             }

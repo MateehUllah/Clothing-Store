@@ -87,17 +87,19 @@ namespace WebApplication1.DAL
             try
             {
                 int price = Int16.Parse(Price); ;
-                cmd = new SqlCommand("AddProduct", con);
+                cmd = new SqlCommand("AddProduct_", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@ProductID", PID);
                 cmd.Parameters.AddWithValue("@ProductName", PNAME);
-                cmd.Parameters.AddWithValue("@Price", Price);
+                cmd.Parameters.AddWithValue("@Price", price);
                 cmd.Parameters.AddWithValue("@imgpath", path);
                 cmd.Parameters.AddWithValue("@Quantity", 100);
                 cmd.ExecuteNonQuery();
                 flag = 2;
             }
+            #pragma warning disable CS0168 // Variable is declared but never used
             catch (Exception ex)
+            #pragma warning restore CS0168 // Variable is declared but never used
             {
                 flag = 1;
                 return flag;
@@ -106,7 +108,6 @@ namespace WebApplication1.DAL
             {
                 con.Close();
             }
-
             return flag;
         }
         public int UpdateProduct(string PID, string PNAME, string Price, string path)
@@ -130,7 +131,9 @@ namespace WebApplication1.DAL
                 cmd.ExecuteNonQuery();
                 flag = 2;
             }
+            #pragma warning disable CS0168 // Variable is declared but never used
             catch (Exception ex)
+            #pragma warning restore CS0168 // Variable is declared but never used
             {
                 flag = 1;
                 return flag;
@@ -142,7 +145,7 @@ namespace WebApplication1.DAL
 
             return flag;
         }
-        public int RemoveProduct(string PID)
+        public int RemoveProduct_(string PID)
         {
             int flag = 0;
             SqlConnection con = new SqlConnection(strcon);
@@ -157,6 +160,40 @@ namespace WebApplication1.DAL
                 cmd = new SqlCommand("RemoveProduct", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@ProductID", PID);
+                cmd.ExecuteNonQuery();
+                flag = 2;
+            }
+            #pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+            #pragma warning restore CS0168 // Variable is declared but never used
+            {
+                flag = 1;
+                return flag;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return flag;
+        }
+        public int UpdateAccount(string FName, string LName, string Email, string Pno)
+        {
+            int flag = 0;
+            SqlConnection con = new SqlConnection(strcon);
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmd;
+            try
+            {
+                cmd = new SqlCommand("UpdateAccount", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@First_Name", FName);
+                cmd.Parameters.AddWithValue("@Last_Name", LName);
+                cmd.Parameters.AddWithValue("@Email", Email);
+                cmd.Parameters.AddWithValue("@MobileNo", Pno);
+                cmd.ExecuteNonQuery();
                 flag = 2;
             }
             catch (Exception ex)
@@ -168,8 +205,10 @@ namespace WebApplication1.DAL
             {
                 con.Close();
             }
+
             return flag;
         }
 
     }
+
 }

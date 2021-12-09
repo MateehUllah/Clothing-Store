@@ -65,6 +65,7 @@
                              <asp:LinkButton ID="LinkButton4" class="nav-item nav-link" runat="server" OnClick="LinkButton4_Click">Cart</asp:LinkButton>
                            <!-- <a href="checkout.aspx" class="nav-item nav-link">Checkout</a>-->
                                <asp:LinkButton ID="LinkButton5" class="nav-item nav-link" runat="server" OnClick="LinkButton5_Click">Checkout</asp:LinkButton>
+                               <asp:LinkButton ID="LinkButton12" class="nav-item nav-link" runat="server" OnClick="LinkButton12_Click">Admin Panel</asp:LinkButton>
                             <!--<a href="my-account.aspx" class="nav-item nav-link">My Account</a>-->
                              <asp:LinkButton ID="LinkButton6" class="nav-item nav-link" runat="server" OnClick="LinkButton6_Click">My Account</asp:LinkButton>
                             <div class="nav-item dropdown">
