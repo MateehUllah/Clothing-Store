@@ -208,7 +208,65 @@ namespace WebApplication1.DAL
 
             return flag;
         }
+        public int UpdatePassAccount(string Email,string NPass)
+        {
+            int flag = 0;
+            SqlConnection con = new SqlConnection(strcon);
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmd;
+            try
+            {
+                cmd = new SqlCommand("UpdatePassAccount", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Email", Email);
+                cmd.Parameters.AddWithValue("@NPass", NPass);
+                cmd.ExecuteNonQuery();
+                flag = 2;
+            }
+            catch (Exception ex)
+            {
+                flag = 1;
+                return flag;
+            }
+            finally
+            {
+                con.Close();
+            }
 
+            return flag;
+        }
+        public int DeleteAccount(string Email)
+        {
+            int flag = 0;
+            SqlConnection con = new SqlConnection(strcon);
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmd;
+            try
+            {
+                cmd = new SqlCommand("DeleteAccount", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Email", Email);
+                cmd.ExecuteNonQuery();
+                flag = 2;
+            }
+            catch (Exception ex)
+            {
+                flag = 1;
+                return flag;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return flag;
+        }
     }
-
+    
 }

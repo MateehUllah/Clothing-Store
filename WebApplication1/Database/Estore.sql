@@ -68,5 +68,31 @@ begin
 delete from Product where ProductID=@ProductID;
 end
 go
-select * from Product
-select * from Login_Register
+Create Procedure UpdateAccount
+	@First_Name varchar(20),
+	@Last_Name varchar(20),
+	@Email nchar(50),
+	@MobileNo varchar(20)
+	as
+		begin
+			update Login_Register set First_Name=@First_Name where Email=@Email;
+			update Login_Register set Last_Name=@Last_Name where Email=@Email;
+			update Login_Register set MobileNo=@MobileNo where Email=@Email;
+		end
+
+go
+Create Procedure DeleteAccount
+	@Email nchar(50)
+	as
+		begin
+			Delete from Login_Register where Email=@Email;
+		end
+go
+Create Procedure UpdatePassAccount
+	@Email nchar(50),
+	@NPass varchar(8)
+	as
+		begin
+			Update Login_Register set [Password]=@NPass where Email=@Email
+		end
+go
