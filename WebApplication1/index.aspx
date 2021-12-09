@@ -11,29 +11,20 @@
                         <nav class="navbar bg-light">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-home"></i>Home</a>
+                                    <asp:LinkButton ID="LinkButton1" class="nav-link" runat="server" OnClick="LinkButton1_Click"><i class="fa fa-home"></i>Home</asp:LinkButton>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-shopping-bag"></i>Best Selling</a>
+                                    <asp:LinkButton ID="LinkButton17" class="nav-link" runat="server"><i class="fa fa-shopping-bag"></i>Best Selling</asp:LinkButton>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-plus-square"></i>New Arrivals</a>
-                                </li>
-                                <!-- <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-female"></i>Fashion & Beauty</a>
-                                </li> -->
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-child"></i>Kids & Babies Clothes</a>
+                                    <asp:LinkButton ID="LinkButton2" class="nav-link" runat="server"><i class="fa fa-plus-square"></i>New Arrivals</asp:LinkButton>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-tshirt"></i>Men & Women Clothes</a>
-                                </li>
-                                <!-- <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-mobile-alt"></i>Gadgets & Accessories</a>
+                                    <asp:LinkButton ID="LinkButton3" class="nav-link" runat="server"><i class="fa fa-child"></i>Kids & Babies Clothes</asp:LinkButton>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-microchip"></i>Electronics & Accessories</a>
-                                </li> -->
+                                    <asp:LinkButton ID="LinkButton4"  class="nav-link" runat="server"><i class="fa fa-tshirt"></i>Men & Women Clothes</asp:LinkButton>
+                                </li
                             </ul>
                         </nav>
                     </div>
@@ -43,21 +34,21 @@
                                 <img src="img/slider-1.jpg" alt="Slider Image" />
                                 <div class="header-slider-caption">
                                     <p>Some text goes here that describes the image</p>
-                                    <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Shop Now</a>
+                                    <asp:LinkButton ID="LinkButton5" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
                                 </div>
                             </div>
                             <div class="header-slider-item">
                                 <img src="img/slider-2.jpg" alt="Slider Image" />
                                 <div class="header-slider-caption">
                                     <p>Some text goes here that describes the image</p>
-                                    <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Shop Now</a>
+                                    <asp:LinkButton ID="LinkButton6" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
                                 </div>
                             </div>
                             <div class="header-slider-item">
                                 <img src="img/slider-3.jpg" alt="Slider Image" />
                                 <div class="header-slider-caption">
                                     <p>Some text goes here that describes the image</p>
-                                    <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Shop Now</a>
+                                     <asp:LinkButton ID="LinkButton7" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
                                 </div>
                             </div>
                         </div>
@@ -211,7 +202,7 @@
         </div>
         <!-- Call to Action End -->
 
-        <!-- Featured Product Start -->
+      <%--  <!-- Featured Product Start -->
         <div class="featured-product product">
             <div class="container-fluid">
                 <div class="section-header">
@@ -242,7 +233,7 @@
                             </div>
                             <div class="product-price">
                                 <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                 <asp:LinkButton ID="LinkButton8" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
                             </div>
                         </div>
                     </div>
@@ -270,7 +261,7 @@
                             </div>
                             <div class="product-price">
                                 <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                 <asp:LinkButton ID="LinkButton9" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
                             </div>
                         </div>
                     </div>
@@ -298,7 +289,7 @@
                             </div>
                             <div class="product-price">
                                 <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                 <asp:LinkButton ID="LinkButton10" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
                             </div>
                         </div>
                     </div>
@@ -326,7 +317,7 @@
                             </div>
                             <div class="product-price">
                                 <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                 <asp:LinkButton ID="LinkButton11" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
                             </div>
                         </div>
                     </div>
@@ -354,17 +345,17 @@
                             </div>
                             <div class="product-price">
                                 <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                 <asp:LinkButton ID="LinkButton12" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
         <!-- Featured Product End -->
 
         <!-- Newsletter Start -->
-        <div class="newsletter">
+     <%--   <div class="newsletter">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
@@ -378,11 +369,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
         <!-- Newsletter End -->
-
         <!-- Recent Product Start -->
-        <div class="recent-product product">
+       <%-- <div class="recent-product product">
             <div class="container-fluid">
                 <div class="section-header">
                     <h1>Recent Product</h1>
@@ -440,7 +430,7 @@
                             </div>
                             <div class="product-price">
                                 <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                 <asp:LinkButton ID="LinkButton13" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
                             </div>
                         </div>
                     </div>
@@ -468,7 +458,7 @@
                             </div>
                             <div class="product-price">
                                 <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                 <asp:LinkButton ID="LinkButton14" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
                             </div>
                         </div>
                     </div>
@@ -496,7 +486,7 @@
                             </div>
                             <div class="product-price">
                                 <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                 <asp:LinkButton ID="LinkButton15" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
                             </div>
                         </div>
                     </div>
@@ -524,15 +514,14 @@
                             </div>
                             <div class="product-price">
                                 <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                 <asp:LinkButton ID="LinkButton16" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
         <!-- Recent Product End -->
-
         <!-- Review Start -->
         <div class="review">
             <div class="container-fluid">

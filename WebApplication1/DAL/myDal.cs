@@ -11,7 +11,7 @@ namespace WebApplication1.DAL
     {
         private static readonly string strcon = System.Configuration.ConfigurationManager.ConnectionStrings["con"].ConnectionString;
 
-        public int SignUP(string FName, string LName, string Email,string Pno, string Pass)
+        public int SignUP(string FName, string LName, string Email, string Pno, string Pass)
         {
             int flag = 0;
             SqlConnection con = new SqlConnection(strcon);
@@ -75,5 +75,101 @@ namespace WebApplication1.DAL
             }
             return foundName;
         }
+        public int AddProduct(string PID, string PNAME, string Price, string path)
+        {
+            int flag = 0;
+            SqlConnection con = new SqlConnection(strcon);
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmd;
+            try
+            {
+                int price = Int16.Parse(Price); ;
+                cmd = new SqlCommand("AddProduct", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ProductID", PID);
+                cmd.Parameters.AddWithValue("@ProductName", PNAME);
+                cmd.Parameters.AddWithValue("@Price", Price);
+                cmd.Parameters.AddWithValue("@imgpath", path);
+                cmd.Parameters.AddWithValue("@Quantity", 100);
+                cmd.ExecuteNonQuery();
+                flag = 2;
+            }
+            catch (Exception ex)
+            {
+                flag = 1;
+                return flag;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return flag;
+        }
+        public int UpdateProduct(string PID, string PNAME, string Price, string path)
+        {
+            int flag = 0;
+            SqlConnection con = new SqlConnection(strcon);
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmd;
+            try
+            {
+                int price = Int16.Parse(Price); ;
+                cmd = new SqlCommand("UpdateProduct", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ProductID", PID);
+                cmd.Parameters.AddWithValue("@ProductName", PNAME);
+                cmd.Parameters.AddWithValue("@Price", Price);
+                cmd.Parameters.AddWithValue("@imgpath", path);
+                cmd.ExecuteNonQuery();
+                flag = 2;
+            }
+            catch (Exception ex)
+            {
+                flag = 1;
+                return flag;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return flag;
+        }
+        public int RemoveProduct(string PID)
+        {
+            int flag = 0;
+            SqlConnection con = new SqlConnection(strcon);
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmd;
+            try
+            {
+
+                cmd = new SqlCommand("RemoveProduct", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ProductID", PID);
+                flag = 2;
+            }
+            catch (Exception ex)
+            {
+                flag = 1;
+                return flag;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return flag;
+        }
+
     }
 }

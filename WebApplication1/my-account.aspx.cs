@@ -13,5 +13,31 @@ namespace WebApplication1
         {
 
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            orderstab.Visible=true;
+        }
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void LinkButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void LinkButton4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void LinkButton5_Click(object sender, EventArgs e)
+        {
+            Session["E-mail"] = null;
+            Session["Password"] = null;
+            Response.Redirect("index.aspx");
+        }
     }
 }

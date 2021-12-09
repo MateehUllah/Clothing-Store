@@ -10,6 +10,13 @@ MobileNo varchar(20),
 [Password] varchar(8) not null
 );
 go
+CREATE Table Product(ProductID varchar(10) not null  Primary Key,
+ProductName varchar(20) not null,
+Price int not null,
+imgpath varchar(100) not null,
+Quantity int not null
+);
+go
 Create Procedure SignIn
 	@First_Name varchar(20),
 	@Last_Name varchar(20),
@@ -21,5 +28,40 @@ Create Procedure SignIn
 			Insert Login_Register (First_Name,Last_Name,Email,MobileNo,[Password]) values (@First_Name,@Last_Name,@Email,@MobileNo,@Pass);
 		end
 Select * from Login_Register
---Execute SignIn @First_Name='Mateeh',@Last_Name='Ullah',@Email='mateehullah89@gmail.com',@MobileNo='03029840566',@Pass='123123';
---Delete from Login_Register where First_Name='Mateeh'
+go
+Create Procedure Login_
+@Email nchar(50),
+@Pass varchar(8)
+as 
+	begin
+	Select * from Login_Register where Email=@Email and [Password]=@Pass
+	end
+GO
+Create Procedure AddProduct
+	@ProductID varchar(10),
+	@ProductName varchar(20),
+	@Price int,
+	@imgpath varchar(100),
+	@Quantity int
+	as 
+		begin
+			Insert Product(ProductID,ProductName,Price,imgpath,Quantity) values (@ProductID,@ProductName,@Price,@imgpath,@Quantity);
+		end
+
+Create Procedure UpdateProduct
+	@ProductID varchar(10),
+	@ProductName varchar(20),
+	@Price int,
+	@imgpath varchar(100)
+	as 
+		begin
+			Update Product set ProductName=@ProductName where ProductID=@ProductID
+			Update Product set Price=@Price where ProductID=@ProductID
+			Update Product set imgpath=@imgpath where ProductID=@ProductID
+		end
+Create Procedure RemoveProduct
+@ProductID varchar(10)
+as 
+begin
+delete from Product where ProductID=@ProductID;
+end

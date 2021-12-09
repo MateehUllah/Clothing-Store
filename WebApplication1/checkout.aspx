@@ -24,107 +24,48 @@
                                 <h2>Billing Address</h2>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>First Name</label>
-                                        <input class="form-control" type="text" placeholder="First Name">
+                                       <asp:Label ID="Label1" runat="server" Text="Label">First Name</asp:Label>
+                                        <asp:TextBox ID="TextBox1" runat="server" class="form-control" type="text" placeholder="First Name"></asp:TextBox> 
                                     </div>
                                     <div class="col-md-6">
-                                        <label>Last Name"</label>
-                                        <input class="form-control" type="text" placeholder="Last Name">
+                                        <asp:Label ID="Label2" runat="server" Text="Label">Last Name</asp:Label>
+                                        <asp:TextBox ID="TextBox2" runat="server" class="form-control" type="text" placeholder="Last Name"></asp:TextBox>
                                     </div>
                                     <div class="col-md-6">
-                                        <label>E-mail</label>
-                                        <input class="form-control" type="text" placeholder="E-mail">
+                                        <asp:Label ID="Label3" runat="server" Text="Label">E-mail</asp:Label>
+                                        <asp:TextBox ID="TextBox3" runat="server" class="form-control" type="text" placeholder="E-mail"></asp:TextBox>
                                     </div>
                                     <div class="col-md-6">
-                                        <label>Mobile No</label>
-                                        <input class="form-control" type="text" placeholder="Mobile No">
+                                        <asp:Label ID="Label4" runat="server" Text="Label">Mobile No</asp:Label>
+                                        <asp:TextBox ID="TextBox4" runat="server" class="form-control" type="text" placeholder="Mobile No"></asp:TextBox>
                                     </div>
                                     <div class="col-md-12">
-                                        <label>Address</label>
-                                        <input class="form-control" type="text" placeholder="Address">
+                                        <asp:Label ID="Label5" runat="server" Text="Label">Address</asp:Label>
+                                        <asp:TextBox ID="TextBox5" runat="server" class="form-control" type="text" placeholder="Address"></asp:TextBox>
                                     </div>
                                     <div class="col-md-6">
-                                        <label>Country</label>
-                                        <select class="custom-select">
-                                            <option selected>United States</option>
-                                            <option>Afghanistan</option>
-                                            <option>Albania</option>
-                                            <option>Algeria</option>
-                                        </select>
+                                        <asp:Label ID="Label6" runat="server" Text="Label">Country</asp:Label>
+                                            <asp:DropDownList  class="custom-select" ID="DropDownList1" runat="server">
+                                                <asp:ListItem Selected="True">Pakistan</asp:ListItem> 
+                                                <asp:ListItem>India</asp:ListItem>  
+                                                <asp:ListItem>United Kingdom</asp:ListItem>  
+                                                <asp:ListItem>United State</asp:ListItem>  
+                                        </asp:DropDownList>
                                     </div>
                                     <div class="col-md-6">
-                                        <label>City</label>
-                                        <input class="form-control" type="text" placeholder="City">
+                                        <asp:Label ID="Label7" runat="server" Text="Label">City</asp:Label>
+                                        <asp:TextBox ID="TextBox6" runat="server" class="form-control" type="text" placeholder="City"></asp:TextBox>
                                     </div>
                                     <div class="col-md-6">
-                                        <label>State</label>
-                                        <input class="form-control" type="text" placeholder="State">
+                                        <asp:Label ID="Label8" runat="server" Text="Label">State</asp:Label>
+                                        <asp:TextBox ID="TextBox7" runat="server" class="form-control" type="text" placeholder="State"></asp:TextBox>
                                     </div>
                                     <div class="col-md-6">
-                                        <label>ZIP Code</label>
-                                        <input class="form-control" type="text" placeholder="ZIP Code">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="newaccount">
-                                            <label class="custom-control-label" for="newaccount">Create an account</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="shipto">
-                                            <label class="custom-control-label" for="shipto">Ship to different address</label>
-                                        </div>
+                                        <asp:Label ID="Label9" runat="server" Text="Label">ZIP Code</asp:Label>
+                                        <asp:TextBox ID="TextBox8" runat="server" class="form-control" type="text" placeholder="ZIP Code"></asp:TextBox>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="shipping-address">
-                                <h2>Shipping Address</h2>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>First Name</label>
-                                        <input class="form-control" type="text" placeholder="First Name">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label>Last Name"</label>
-                                        <input class="form-control" type="text" placeholder="Last Name">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label>E-mail</label>
-                                        <input class="form-control" type="text" placeholder="E-mail">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label>Mobile No</label>
-                                        <input class="form-control" type="text" placeholder="Mobile No">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label>Address</label>
-                                        <input class="form-control" type="text" placeholder="Address">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label>Country</label>
-                                        <select class="custom-select">
-                                            <option selected>United States</option>
-                                            <option>Afghanistan</option>
-                                            <option>Albania</option>
-                                            <option>Algeria</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label>City</label>
-                                        <input class="form-control" type="text" placeholder="City">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label>State</label>
-                                        <input class="form-control" type="text" placeholder="State">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label>ZIP Code</label>
-                                        <input class="form-control" type="text" placeholder="ZIP Code">
-                                    </div>
-                                </div>
-                            </div>
+                           </div>                                          
                         </div>
                     </div>
                     <div class="col-lg-4">

@@ -25,9 +25,9 @@ namespace WebApplication1
 
             if (found.Length > 0)
             {
-                //Response.Write("<script>alert(found)</script>");
-                Session["Email"] = found;
-                Session["role"] = "user";
+               
+                Session["E-mail"] = TextBox7.Text.Trim().ToString();
+                Session["Password"] = TextBox7.Text.Trim().ToString();
                 Response.Redirect("index.aspx");
             }
             else
