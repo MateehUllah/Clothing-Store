@@ -55,28 +55,20 @@
 
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto">
-                           <!-- <a href="index.aspx" class="nav-item nav-link active">Home</a>-->
+                          
                             <asp:LinkButton ID="LinkButton1" class="nav-item nav-link active" runat="server" OnClick="LinkButton1_Click">Home</asp:LinkButton>
                             <asp:LinkButton ID="LinkButton2" class="nav-item nav-link" runat="server" OnClick="LinkButton2_Click">Products</asp:LinkButton>
-                           <!-- <a href="product-list.aspx" class="nav-item nav-link">Products</a>-->
-                           <!-- <a href="product-detail.aspx" class="nav-item nav-link">Product Detail</a>-->
                             <asp:LinkButton ID="LinkButton3" class="nav-item nav-link" runat="server" OnClick="LinkButton3_Click">Product Detail</asp:LinkButton>
-                            <!--<a href="cart.aspx" class="nav-item nav-link">Cart</a>-->
-                             <asp:LinkButton ID="LinkButton4" class="nav-item nav-link" runat="server" OnClick="LinkButton4_Click">Cart</asp:LinkButton>
-                           <!-- <a href="checkout.aspx" class="nav-item nav-link">Checkout</a>-->
-                               <asp:LinkButton ID="LinkButton5" class="nav-item nav-link" runat="server" OnClick="LinkButton5_Click">Checkout</asp:LinkButton>
-                               <asp:LinkButton ID="LinkButton12" class="nav-item nav-link" runat="server" OnClick="LinkButton12_Click">Admin Panel</asp:LinkButton>
-                            <!--<a href="my-account.aspx" class="nav-item nav-link">My Account</a>-->
-                             <asp:LinkButton ID="LinkButton6" class="nav-item nav-link" runat="server" OnClick="LinkButton6_Click">My Account</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton4" class="nav-item nav-link" runat="server" OnClick="LinkButton4_Click">Cart</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton5" class="nav-item nav-link" runat="server" OnClick="LinkButton5_Click">Checkout</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton12" class="nav-item nav-link" runat="server" OnClick="LinkButton12_Click">Admin Panel</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton6" class="nav-item nav-link" runat="server" OnClick="LinkButton6_Click">My Account</asp:LinkButton>
                             <div class="nav-item dropdown">
-                              <!--  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More Pages</a>-->
-                                  <asp:LinkButton ID="LinkButton10" class="nav-link dropdown-toggle" data-toggle="dropdown" runat="server" OnClick="LinkButton10_Click">More Pages</asp:LinkButton>
-                                <div class="dropdown-menu">
-                                    <!--<a href="wishlist.aspx" class="dropdown-item">Wishlist</a>-->
-                                     <asp:LinkButton ID="LinkButton7" class="dropdown-item" runat="server" OnClick="LinkButton7_Click">Wishlist</asp:LinkButton>
-                                 <!--   <a href="contact.aspx" class="dropdown-item">Contact Us</a>-->
-                                    <asp:LinkButton ID="LinkButton9" class="dropdown-item" runat="server" OnClick="LinkButton9_Click">Contact Us</asp:LinkButton>
-                                </div>
+                            <asp:LinkButton ID="LinkButton10" class="nav-link dropdown-toggle" data-toggle="dropdown" runat="server" OnClick="LinkButton10_Click">More Pages</asp:LinkButton>
+                            <div class="dropdown-menu">
+                                 <asp:LinkButton ID="LinkButton7" class="dropdown-item" runat="server" OnClick="LinkButton7_Click">Wishlist</asp:LinkButton>
+                                 <asp:LinkButton ID="LinkButton9" class="dropdown-item" runat="server" OnClick="LinkButton9_Click">Contact Us</asp:LinkButton>
+                            </div>
                             </div>
                         </div>
                         <div class="navbar-nav ml-auto">

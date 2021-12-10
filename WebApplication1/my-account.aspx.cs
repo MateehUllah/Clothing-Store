@@ -146,5 +146,15 @@ namespace WebApplication1
         {
             TextBox5 = TextBox6 =null;
         }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
+        }
+
+        protected void LinkButton3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("product-list.aspx");
+        }
     }
 }

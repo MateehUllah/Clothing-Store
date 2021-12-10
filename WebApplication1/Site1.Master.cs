@@ -26,6 +26,8 @@ namespace WebApplication1
                 {
                     LinkButton11.Visible = false;
                     LinkButton6.Visible = false;
+                    LinkButton4.Visible = false;
+                    LinkButton5.Visible = false;
                 }
             }
             else

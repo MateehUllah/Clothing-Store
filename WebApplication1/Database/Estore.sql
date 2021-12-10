@@ -96,3 +96,5 @@ Create Procedure UpdatePassAccount
 			Update Login_Register set [Password]=@NPass where Email=@Email
 		end
 go
+Select * from Login_Register
+select * from Product

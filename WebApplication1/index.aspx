@@ -14,16 +14,16 @@
                                     <asp:LinkButton ID="LinkButton1" class="nav-link" runat="server" OnClick="LinkButton1_Click"><i class="fa fa-home"></i>Home</asp:LinkButton>
                                 </li>
                                 <li class="nav-item">
-                                    <asp:LinkButton ID="LinkButton17" class="nav-link" runat="server"><i class="fa fa-shopping-bag"></i>Best Selling</asp:LinkButton>
+                                    <asp:LinkButton ID="LinkButton17" class="nav-link" runat="server" OnClick="LinkButton17_Click"><i class="fa fa-shopping-bag"></i>Best Selling</asp:LinkButton>
                                 </li>
                                 <li class="nav-item">
-                                    <asp:LinkButton ID="LinkButton2" class="nav-link" runat="server"><i class="fa fa-plus-square"></i>New Arrivals</asp:LinkButton>
+                                    <asp:LinkButton ID="LinkButton2" class="nav-link" runat="server" OnClick="LinkButton2_Click"><i class="fa fa-plus-square"></i>New Arrivals</asp:LinkButton>
                                 </li>
                                 <li class="nav-item">
-                                    <asp:LinkButton ID="LinkButton3" class="nav-link" runat="server"><i class="fa fa-child"></i>Kids & Babies Clothes</asp:LinkButton>
+                                    <asp:LinkButton ID="LinkButton3" class="nav-link" runat="server" OnClick="LinkButton3_Click"><i class="fa fa-child"></i>Kids & Babies Clothes</asp:LinkButton>
                                 </li>
                                 <li class="nav-item">
-                                    <asp:LinkButton ID="LinkButton4"  class="nav-link" runat="server"><i class="fa fa-tshirt"></i>Men & Women Clothes</asp:LinkButton>
+                                    <asp:LinkButton ID="LinkButton4"  class="nav-link" runat="server" OnClick="LinkButton4_Click"><i class="fa fa-tshirt"></i>Men & Women Clothes</asp:LinkButton>
                                 </li>
                             </ul>
                         </nav>
@@ -34,21 +34,21 @@
                                 <img src="img/slider-1.jpg" alt="Slider Image" />
                                 <div class="header-slider-caption">
                                     <p>Some text goes here that describes the image</p>
-                                    <asp:LinkButton ID="LinkButton5" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
+                                    <asp:LinkButton ID="LinkButton5" class="btn" runat="server" OnClick="LinkButton5_Click"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
                                 </div>
                             </div>
                             <div class="header-slider-item">
                                 <img src="img/slider-2.jpg" alt="Slider Image" />
                                 <div class="header-slider-caption">
                                     <p>Some text goes here that describes the image</p>
-                                    <asp:LinkButton ID="LinkButton6" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
+                                    <asp:LinkButton ID="LinkButton6" class="btn" runat="server" OnClick="LinkButton6_Click"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
                                 </div>
                             </div>
                             <div class="header-slider-item">
                                 <img src="img/slider-3.jpg" alt="Slider Image" />
                                 <div class="header-slider-caption">
                                     <p>Some text goes here that describes the image</p>
-                                     <asp:LinkButton ID="LinkButton7" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
+                                     <asp:LinkButton ID="LinkButton7" class="btn" runat="server" OnClick="LinkButton7_Click"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
                                 </div>
                             </div>
                         </div>
@@ -201,327 +201,6 @@
             </div>
         </div>
         <!-- Call to Action End -->
-
-      <%--  <!-- Featured Product Start -->
-        <div class="featured-product product">
-            <div class="container-fluid">
-                <div class="section-header">
-                    <h1>Featured Product</h1>
-                </div>
-                <div class="row align-items-center product-slider product-slider-4">
-                    <div class="col-lg-3">
-                        <div class="product-item">
-                            <div class="product-title">
-                                <a href="#">Product Name</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="product-image">
-                                <a href="product-detail.aspx">
-                                    <img src="img/product-1.jpg" alt="Product Image">
-                                </a>
-                                <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-price">
-                                <h3><span>$</span>99</h3>
-                                 <asp:LinkButton ID="LinkButton8" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="product-item">
-                            <div class="product-title">
-                                <a href="#">Product Name</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="product-image">
-                                <a href="product-detail.aspx">
-                                    <img src="img/product-2.jpg" alt="Product Image">
-                                </a>
-                                <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-price">
-                                <h3><span>$</span>99</h3>
-                                 <asp:LinkButton ID="LinkButton9" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="product-item">
-                            <div class="product-title">
-                                <a href="#">Product Name</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="product-image">
-                                <a href="product-detail.aspx">
-                                    <img src="img/product-3.jpg" alt="Product Image">
-                                </a>
-                                <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-price">
-                                <h3><span>$</span>99</h3>
-                                 <asp:LinkButton ID="LinkButton10" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="product-item">
-                            <div class="product-title">
-                                <a href="#">Product Name</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="product-image">
-                                <a href="product-detail.aspx">
-                                    <img src="img/product-4.jpg" alt="Product Image">
-                                </a>
-                                <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-price">
-                                <h3><span>$</span>99</h3>
-                                 <asp:LinkButton ID="LinkButton11" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="product-item">
-                            <div class="product-title">
-                                <a href="#">Product Name</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="product-image">
-                                <a href="product-detail.aspx">
-                                    <img src="img/product-5.jpg" alt="Product Image">
-                                </a>
-                                <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-price">
-                                <h3><span>$</span>99</h3>
-                                 <asp:LinkButton ID="LinkButton12" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>--%>
-        <!-- Featured Product End -->
-
-        <!-- Newsletter Start -->
-     <%--   <div class="newsletter">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h1>Subscribe Our Newsletter</h1>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form">
-                            <input type="email" value="Your email here">
-                            <button>Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>--%>
-        <!-- Newsletter End -->
-        <!-- Recent Product Start -->
-       <%-- <div class="recent-product product">
-            <div class="container-fluid">
-                <div class="section-header">
-                    <h1>Recent Product</h1>
-                </div>
-                <div class="row align-items-center product-slider product-slider-4">
-                    <div class="col-lg-3">
-                        <div class="product-item">
-                            <div class="product-title">
-                                <a href="#">Product Name</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="product-image">
-                                <a href="product-detail.aspx">
-                                    <img src="img/product-6.jpg" alt="Product Image">
-                                </a>
-                                <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-price">
-                                <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="product-item">
-                            <div class="product-title">
-                                <a href="#">Product Name</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="product-image">
-                                <a href="product-detail.aspx">
-                                    <img src="img/product-7.jpg" alt="Product Image">
-                                </a>
-                                <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-price">
-                                <h3><span>$</span>99</h3>
-                                 <asp:LinkButton ID="LinkButton13" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="product-item">
-                            <div class="product-title">
-                                <a href="#">Product Name</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="product-image">
-                                <a href="product-detail.aspx">
-                                    <img src="img/product-8.jpg" alt="Product Image">
-                                </a>
-                                <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-price">
-                                <h3><span>$</span>99</h3>
-                                 <asp:LinkButton ID="LinkButton14" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="product-item">
-                            <div class="product-title">
-                                <a href="#">Product Name</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="product-image">
-                                <a href="product-detail.aspx">
-                                    <img src="img/product-9.jpg" alt="Product Image">
-                                </a>
-                                <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-price">
-                                <h3><span>$</span>99</h3>
-                                 <asp:LinkButton ID="LinkButton15" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="product-item">
-                            <div class="product-title">
-                                <a href="#">Product Name</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="product-image">
-                                <a href="product-detail.aspx">
-                                    <img src="img/product-10.jpg" alt="Product Image">
-                                </a>
-                                <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-price">
-                                <h3><span>$</span>99</h3>
-                                 <asp:LinkButton ID="LinkButton16" class="btn" runat="server"><i class="fa fa-shopping-cart"></i>Shop Now</asp:LinkButton>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>--%>
-        <!-- Recent Product End -->
         <!-- Review Start -->
         <div class="review">
             <div class="container-fluid">

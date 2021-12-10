@@ -61,7 +61,6 @@ namespace WebApplication1.DAL
 
                 cmd.Parameters.AddWithValue("@Email", Email);
                 cmd.Parameters.AddWithValue("@Password", Pass);
-
                 foundName = Convert.ToString(cmd.ExecuteScalar());
 
             }
