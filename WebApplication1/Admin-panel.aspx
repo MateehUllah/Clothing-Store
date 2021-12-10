@@ -18,23 +18,31 @@
                 <div class="row">
                         <div class="register-form">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <asp:Label runat="server">Product ID</asp:Label>
                                     <asp:TextBox class="form-control" ID="TextBox50" type="text" placeholder="Product ID" runat="server"></asp:TextBox>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <asp:Label runat="server">Product Name</asp:Label>
                                     <asp:TextBox class="form-control" ID="TextBox51" type="text" placeholder="Product Name" runat="server"></asp:TextBox>
                                 </div>
-                                <div class="col-md-6">
- 
+                                <div class="col-md-4">
+                                    <asp:Label runat="server">Quantity</asp:Label>
+                                    <asp:TextBox class="form-control" ID="TextBox2" type="text" placeholder="Quantity" runat="server"></asp:TextBox>
+                                </div>
+                                <div class="col-md-4">
                                     <asp:Label runat="server">Price</asp:Label>
                                     <asp:TextBox class="form-control" ID="TextBox52" type="text" placeholder="Price" runat="server"></asp:TextBox>
                                 </div>
-                                <div class="col-md-6">
+                                 <div class="col-md-4">
+                                    <asp:Label runat="server">Description</asp:Label>
+                                    <asp:TextBox class="form-control" ID="TextBox1" type="text" Rows="4" MaxLength="100" placeholder="Description" runat="server"></asp:TextBox>
+                                </div>
+                                <div class="col-md-4">
                                     <asp:Label runat="server">Choose Product</asp:Label>
                                     <asp:FileUpload class="form-control" ID="FileUpload1" runat="server" />
                                 </div>
+
                                  <div class="col-md-6">
                                      <asp:Button ID="Add_Product" class="btn" runat="server" Text="Add Product" OnClick="Add_Product_Click"/>
                                 </div>

@@ -32,7 +32,9 @@ namespace WebApplication1
                 string ProductName = TextBox51.Text.Trim().ToString();
                 string Price = TextBox52.Text.Trim().ToString();
                 string Path = CheckImageUpload();
-                int flag = dal.AddProduct(ProductID, ProductName, Price,Path);
+                string descrip = TextBox1.Text.Trim().ToString();
+                string Quantity = TextBox2.Text.Trim().ToString();
+                int flag = dal.AddProduct(ProductID, ProductName, Price,Path,descrip,Quantity);
                 if (flag == 1)
                 {
                     Response.Write("<script>alert('Error');</script>");
@@ -62,8 +64,10 @@ namespace WebApplication1
                 string ProductID = TextBox50.Text.Trim().ToString();
                 string ProductName = TextBox51.Text.Trim().ToString();
                 string Price = TextBox52.Text.Trim().ToString();
+                string descrip = TextBox1.Text.Trim().ToString();
                 string Path = CheckImageUpload();
-                int flag = dal.UpdateProduct(ProductID, ProductName, Price, Path);
+                string Quantity = TextBox2.Text.Trim().ToString();
+                int flag = dal.UpdateProduct(ProductID, ProductName, Price, Path,descrip, Quantity);
                 if (flag == 1)
                 {
                     Response.Write("<script>alert('Error');</script>");
@@ -107,7 +111,7 @@ namespace WebApplication1
         }
         bool CheckBlankBox()
         {
-            if (string.IsNullOrWhiteSpace(TextBox50.Text) || string.IsNullOrWhiteSpace(TextBox51.Text) || string.IsNullOrWhiteSpace(TextBox52.Text))
+            if (string.IsNullOrWhiteSpace(TextBox50.Text) || string.IsNullOrWhiteSpace(TextBox51.Text) || string.IsNullOrWhiteSpace(TextBox52.Text)|| string.IsNullOrWhiteSpace(TextBox1.Text) || string.IsNullOrWhiteSpace(TextBox2.Text))
             {
                 return true;
             }
@@ -118,7 +122,7 @@ namespace WebApplication1
         }
         void clearAddUpdate()
         {
-            TextBox50 = TextBox51 = TextBox52 = null;
+           TextBox1=TextBox2= TextBox50 = TextBox51 = TextBox52 = null;
         }
         protected string CheckImageUpload()
         {
@@ -129,10 +133,10 @@ namespace WebApplication1
 
                 if (extension == ".jpg" || extension == ".png" || extension == ".jpeg")
                 {
-                    string path = Server.MapPath("img\\");
+                    string path = Server.MapPath("product\\");
                     string imageName =FileUpload1.FileName;
                     FileUpload1.SaveAs(path + imageName);
-                    SavePath = "img\\" + imageName;
+                    SavePath = "product\\" + imageName;
                 }
                 else
                 {

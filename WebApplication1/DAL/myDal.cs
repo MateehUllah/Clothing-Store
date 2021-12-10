@@ -74,7 +74,7 @@ namespace WebApplication1.DAL
             }
             return foundName;
         }
-        public int AddProduct(string PID, string PNAME, string Price, string path)
+        public int AddProduct(string PID, string PNAME, string Price, string path,string Description,string Quantity)
         {
             int flag = 0;
             SqlConnection con = new SqlConnection(strcon);
@@ -85,14 +85,16 @@ namespace WebApplication1.DAL
             SqlCommand cmd;
             try
             {
-                int price = Int16.Parse(Price); ;
+                int price = Int16.Parse(Price);
+                int Quan= Int16.Parse(Quantity);
                 cmd = new SqlCommand("AddProduct_", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@ProductID", PID);
                 cmd.Parameters.AddWithValue("@ProductName", PNAME);
                 cmd.Parameters.AddWithValue("@Price", price);
                 cmd.Parameters.AddWithValue("@imgpath", path);
-                cmd.Parameters.AddWithValue("@Quantity", 100);
+                cmd.Parameters.AddWithValue("@Quantity",Quan);
+                cmd.Parameters.AddWithValue("@Description", Description);
                 cmd.ExecuteNonQuery();
                 flag = 2;
             }
@@ -109,7 +111,7 @@ namespace WebApplication1.DAL
             }
             return flag;
         }
-        public int UpdateProduct(string PID, string PNAME, string Price, string path)
+        public int UpdateProduct(string PID, string PNAME, string Price, string path,string description,string Quantity)
         {
             int flag = 0;
             SqlConnection con = new SqlConnection(strcon);
@@ -120,13 +122,16 @@ namespace WebApplication1.DAL
             SqlCommand cmd;
             try
             {
-                int price = Int16.Parse(Price); ;
+                int price = Int16.Parse(Price);
+                int Quan= Int16.Parse(Quantity);
                 cmd = new SqlCommand("UpdateProduct", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@ProductID", PID);
                 cmd.Parameters.AddWithValue("@ProductName", PNAME);
                 cmd.Parameters.AddWithValue("@Price", Price);
                 cmd.Parameters.AddWithValue("@imgpath", path);
+                cmd.Parameters.AddWithValue("@Quantity", Quan);
+                cmd.Parameters.AddWithValue("@Description",description);
                 cmd.ExecuteNonQuery();
                 flag = 2;
             }

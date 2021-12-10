@@ -18,8 +18,22 @@
         <div class="product-view">
             <div class="container-fluid">
                 <div class="row">
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EstoreConnectionString %>" SelectCommand="SELECT [ProductName], [Price], [imgpath] FROM [Product]"></asp:SqlDataSource>
                     <div class="col-lg-8">
-                        <div class="row">
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" AllowPaging="True">
+                            <Columns>
+
+                                <asp:BoundField DataField="ProductName" HeaderText="ProductName" SortExpression="ProductName" />
+                                <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
+                                <asp:ImageField DataImageUrlField="imgpath" ControlStyle-CssClass="product-image">
+                                  <ControlStyle CssClass="product-image"></ControlStyle>
+                                </asp:ImageField>
+                                <asp:ButtonField Text="Add to Cart" />
+                                
+                                
+                            </Columns>
+                        </asp:GridView>
+                        <%--<div class="row">
                             <div class="col-md-12">
                                 <div class="product-view-top">
                                     <div class="row">
@@ -316,10 +330,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>--%>
                         
                         <!-- Pagination Start -->
-<%--                        <div class="col-md-12">
+                        <%--<div class="col-md-12">
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-center">
                                     <li class="page-item disabled">
@@ -336,6 +350,7 @@
                         </div>--%>
                         <!-- Pagination Start -->
                     </div>           
+
                     
                     <!-- Side Bar Start -->
                     <div class="col-lg-4 sidebar">
