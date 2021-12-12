@@ -15,7 +15,8 @@ CREATE Table Product(ProductID varchar(10) not null  Primary Key,
 ProductName varchar(20) not null,
 Price int,
 imgpath varchar(100) not null,
-Quantity int not null
+Quantity int not null,
+[Description] varchar(100)
 );
 go
 Create Procedure SignIn
@@ -43,22 +44,27 @@ Create Procedure AddProduct_
 	@ProductName varchar(20),
 	@Price int,
 	@imgpath varchar(100),
-	@Quantity int
+	@Quantity int,
+	@Description varchar(100)
 	as 
 		begin
-			Insert Product(ProductID,ProductName,Price,imgpath,Quantity) values (@ProductID,@ProductName,@Price,@imgpath,@Quantity);
+			Insert Product(ProductID,ProductName,Price,imgpath,Quantity,[Description]) values (@ProductID,@ProductName,@Price,@imgpath,@Quantity,@Description);
 		end
 go
 Create Procedure UpdateProduct
 	@ProductID varchar(10),
 	@ProductName varchar(20),
 	@Price int,
-	@imgpath varchar(100)
+	@imgpath varchar(100),
+	@Quantity int,
+	@Description varchar(100)
 	as 
 		begin
 			Update Product set ProductName=@ProductName where ProductID=@ProductID;
 			Update Product set Price=@Price where ProductID=@ProductID;
 			Update Product set imgpath=@imgpath where ProductID=@ProductID;
+			Update Product set Quantity=@Quantity where ProductID=@ProductID;
+			Update Product set [Description]=@Description where ProductID=@ProductID;
 		end
 go
 Create Procedure RemoveProduct

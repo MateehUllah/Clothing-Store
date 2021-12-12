@@ -66,7 +66,7 @@
                             <div class="nav-item dropdown">
                             <asp:LinkButton ID="LinkButton10" class="nav-link dropdown-toggle" data-toggle="dropdown" runat="server" OnClick="LinkButton10_Click">More Pages</asp:LinkButton>
                             <div class="dropdown-menu">
-                                 <asp:LinkButton ID="LinkButton7" class="dropdown-item" runat="server" OnClick="LinkButton7_Click">Wishlist</asp:LinkButton>
+                                 <%--<asp:LinkButton ID="LinkButton7" class="dropdown-item" runat="server" OnClick="LinkButton7_Click">Wishlist</asp:LinkButton>--%>
                                  <asp:LinkButton ID="LinkButton9" class="dropdown-item" runat="server" OnClick="LinkButton9_Click">Contact Us</asp:LinkButton>
                             </div>
                             </div>
