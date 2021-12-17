@@ -11,7 +11,6 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridView1.DataBind();
         }
         protected void LinkButton3_Click(object sender, EventArgs e)
         {
@@ -41,6 +40,14 @@ namespace WebApplication1
         protected void LinkButton8_Click(object sender, EventArgs e)
         {
             Response.Redirect("https://edenrobe.com/");
+        }
+
+        protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
+        {
+            if(e.CommandName== "AddToCart")
+            {
+                Response.Redirect("cart.aspx?id=" + e.CommandArgument.ToString());
+            }
         }
     }
 }
