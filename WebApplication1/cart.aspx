@@ -21,28 +21,23 @@
                     <div class="col-lg-8">
                         <div class="cart-page-inner">
                             <div class="table-responsive">
-                           
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="cart-page-inner">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="cart-summary">
-                                        <div class="cart-content">
-                                            <!--SubTOTAL-->
-                                        </div>
-                                        <div class="cart-btn">
-                                            <button>Update Cart</button>
-                                            <button>Checkout</button>
-                                        </div>
-                                    </div>
-                                </div>
+                                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" HorizontalAlign="Left" AllowPaging="True" ShowFooter="True" OnRowDeleting="GridView1_RowDeleting" >
+                                    <Columns>
+                                        <asp:BoundField DataField="itemno" HeaderText="Item#" />
+                                        <asp:BoundField DataField="ProductID" HeaderText="Product ID" />
+                                        <asp:BoundField DataField="ProductName" HeaderText="Product Name"/>
+                                        <asp:BoundField DataField="Price" HeaderText="Price" />
+                                        <asp:CommandField DeleteText="Remove"  ShowDeleteButton="True" />
+                                    </Columns>
+                                </asp:GridView>
+                                                         
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-12">
+                              <asp:LinkButton ID="LinkButton1" runat="server" class="btn" OnClick="LinkButton1_Click" >Continue Shopping</asp:LinkButton>
+                              <asp:LinkButton ID="LinkButton2" runat="server" class="btn" OnClick="LinkButton2_Click">Checkout</asp:LinkButton>   
             </div>
         </div>
         <!-- Cart End -->

@@ -44,9 +44,16 @@ namespace WebApplication1
 
         protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
         {
-            if(e.CommandName== "AddToCart")
+            if (Session["E-mail"] != null && Session["Password"] != null)
             {
-                Response.Redirect("cart.aspx?id=" + e.CommandArgument.ToString());
+                if (e.CommandName == "AddToCart")
+                {
+                    Response.Redirect("cart.aspx?id=" + e.CommandArgument.ToString());
+                }
+            }
+            else
+            {
+                Response.Write("<script> alert('Kindly Login with your account'); </script>");
             }
         }
     }

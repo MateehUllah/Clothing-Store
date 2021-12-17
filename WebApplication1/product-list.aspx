@@ -27,7 +27,7 @@
                             <ItemTemplate>
                                 <table class="w-100">
                                     <tr>
-                                        <td class="text-center">Product ID:<asp:Label ID="Label4" runat="server" Text='<%# Eval("ProductID") %>'></asp:Label>
+                                        <td class="text-center">Product ID: <asp:Label ID="Label4" runat="server" Text='<%# Eval("ProductID") %>'></asp:Label>
                                         </td>
                                     </tr>
                                     <tr>
@@ -52,9 +52,8 @@
                             </ItemTemplate>
                             <SelectedItemStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
                         </asp:DataList>
-                    </div>           
+                    </div>          
 
-                    
                     <!-- Side Bar Start -->
                     <div class="col-lg-4 sidebar">
                         <div class="sidebar-widget category">
