@@ -47,8 +47,9 @@ namespace WebApplication1
                         GridView1.DataBind();
                         Session["Buyitems"] = dt;
 
-                        //GridView1.FooterRow.Cells[1].Text = "Total Amount:" + getTotalamount().ToString();
-                        //Response.Redirect("cart.aspx");
+                        GridView1.FooterRow.Cells[2].Text = "Total Amount:";
+                        GridView1.FooterRow.Cells[3].Text = getTotalamount().ToString() + "$";
+                        Response.Redirect("cart.aspx");
                     }
                     else
                     {
@@ -75,8 +76,9 @@ namespace WebApplication1
                         GridView1.DataBind();
                         Session["Buyitems"] = dt;
 
-                        //GridView1.FooterRow.Cells[1].Text = "Total Amount:" + getTotalamount().ToString();
-                        //Response.Redirect("cart.aspx");
+                        GridView1.FooterRow.Cells[2].Text = "Total Amount:";
+                        GridView1.FooterRow.Cells[3].Text = getTotalamount().ToString() + "$";
+                        Response.Redirect("cart.aspx");
                     }
                 }
                 else
@@ -85,10 +87,11 @@ namespace WebApplication1
                     GridView1.DataSource = dt;
                     GridView1.DataBind();
 
-                    //if(GridView1.Rows.Count>0)
-                    //{
-                    //    GridView1.FooterRow.Cells[1].Text = "Total Amount:" + getTotalamount().ToString();
-                    //}
+                    if(GridView1.Rows.Count>0)
+                    {
+                        GridView1.FooterRow.Cells[2].Text = "Total Amount:";
+                        GridView1.FooterRow.Cells[3].Text=getTotalamount().ToString()+"$";
+                    }
 
                 }
             }
@@ -104,6 +107,8 @@ namespace WebApplication1
             while(i<rows)
             {
                 total = total + Convert.ToInt32(dt.Rows[i]["Price"].ToString());
+                i++;
+
             }
             return total;
         }

@@ -67,7 +67,7 @@ namespace WebApplication1
                 else if (flag == 2)
                 {
                     Response.Write("<script> alert('Successfully Signed Up. Login to enjoy more features:)'); </script>");
-                    Response.Redirect("index.aspx");
+                    Response.Redirect("login.aspx");
                    
                 }
                 clear();
