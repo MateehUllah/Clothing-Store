@@ -47,6 +47,7 @@ namespace WebApplication1
                         GridView1.DataBind();
                         Session["Buyitems"] = dt;
 
+                        Session["Amount"] = getTotalamount().ToString();
                         GridView1.FooterRow.Cells[2].Text = "Total Amount:";
                         GridView1.FooterRow.Cells[3].Text = getTotalamount().ToString() + "$";
                         Response.Redirect("cart.aspx");
@@ -76,6 +77,7 @@ namespace WebApplication1
                         GridView1.DataBind();
                         Session["Buyitems"] = dt;
 
+                        Session["Amount"] = getTotalamount().ToString();
                         GridView1.FooterRow.Cells[2].Text = "Total Amount:";
                         GridView1.FooterRow.Cells[3].Text = getTotalamount().ToString() + "$";
                         Response.Redirect("cart.aspx");
@@ -89,6 +91,7 @@ namespace WebApplication1
 
                     if(GridView1.Rows.Count>0)
                     {
+                        Session["Amount"] = getTotalamount().ToString();
                         GridView1.FooterRow.Cells[2].Text = "Total Amount:";
                         GridView1.FooterRow.Cells[3].Text=getTotalamount().ToString()+"$";
                     }
@@ -152,7 +155,7 @@ namespace WebApplication1
 
         protected void LinkButton2_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("checkout.aspx");
         }
     }
 }

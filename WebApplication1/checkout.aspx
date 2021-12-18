@@ -23,11 +23,15 @@
                             <div class="billing-address">
                                 <h2>Billing Address</h2>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
+                                       <asp:Label ID="Label10" runat="server" Text="Label">Order#</asp:Label>
+                                        <asp:TextBox ID="TextBox9" runat="server" class="form-control" type="text" placeholder="Order#"></asp:TextBox> 
+                                    </div>
+                                    <div class="col-md-4">
                                        <asp:Label ID="Label1" runat="server" Text="Label">First Name</asp:Label>
                                         <asp:TextBox ID="TextBox1" runat="server" class="form-control" type="text" placeholder="First Name"></asp:TextBox> 
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <asp:Label ID="Label2" runat="server" Text="Label">Last Name</asp:Label>
                                         <asp:TextBox ID="TextBox2" runat="server" class="form-control" type="text" placeholder="Last Name"></asp:TextBox>
                                     </div>
@@ -72,10 +76,8 @@
                         <div class="checkout-inner">
                             <div class="checkout-summary">
                                 <h1>Cart Total</h1>
-                                <p>Product Name<span>$99</span></p>
-                                <p class="sub-total">Sub Total<span>$99</span></p>
-                                <p class="ship-cost">Shipping Cost<span>$1</span></p>
-                                <h2>Grand Total<span>$100</span></h2>
+                                <asp:Label ID="Label11" runat="server" Text="Label">Grand Total</asp:Label>
+                                <asp:TextBox ID="TextBox10" runat="server" class="form-control" type="text" placeholder="Grand Total"></asp:TextBox>
                             </div>
 
                             <div class="checkout-payment">
@@ -88,8 +90,7 @@
                                         </div>
                                         <div class="payment-content" id="payment-1-show">
                                             <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt orci ac eros volutpat maximus lacinia quis diam.
-                                            </p>
+                                                PayPal is the faster, safer way to send money, make an online payment, receive money or set up a merchant account.                                            </p>
                                         </div>
                                     </div>
                                     <div class="payment-method">
@@ -99,7 +100,7 @@
                                         </div>
                                         <div class="payment-content" id="payment-2-show">
                                             <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt orci ac eros volutpat maximus lacinia quis diam.
+                                               Your Payoneer account is your key to unlock a universe of opportunities. Whether making international payments, receiving funds, managing your digital business, or accessing capital.
                                             </p>
                                         </div>
                                     </div>
@@ -110,7 +111,7 @@
                                         </div>
                                         <div class="payment-content" id="payment-3-show">
                                             <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt orci ac eros volutpat maximus lacinia quis diam.
+                                                A check payment is a negotiable instrument drawn against deposited funds, to pay the recipient a specific amount of funds on demand.
                                             </p>
                                         </div>
                                     </div>
@@ -121,7 +122,7 @@
                                         </div>
                                         <div class="payment-content" id="payment-4-show">
                                             <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt orci ac eros volutpat maximus lacinia quis diam.
+                                                Direct Bank Transfer is a gateway that require no payment be made online. Orders using Direct Bank Transfer are set On Hold until payment clears outside of Estore.
                                             </p>
                                         </div>
                                     </div>
@@ -132,14 +133,12 @@
                                         </div>
                                         <div class="payment-content" id="payment-5-show">
                                             <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt orci ac eros volutpat maximus lacinia quis diam.
-                                            </p>
+                                               Cash on delivery, sometimes called collect on delivery or cash on demand, is the sale of goods by mail order where payment is made on delivery rather than in advance. If the goods are not paid for, they are returned to the retailer.
                                         </div>
                                     </div>
                                 </div>
-                                <div class="checkout-btn">
-                                    <button>Place Order</button>
-                                </div>
+                                
+                                    <asp:LinkButton ID="LinkButton1" class="btn" runat="server">Place Order</asp:LinkButton>
                             </div>
                         </div>
                     </div>

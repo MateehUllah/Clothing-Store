@@ -68,7 +68,6 @@ namespace WebApplication1
                 {
                     Response.Write("<script> alert('Successfully Signed Up. Login to enjoy more features:)'); </script>");
                     Response.Redirect("login.aspx");
-                   
                 }
                 clear();
             }

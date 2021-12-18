@@ -24,6 +24,8 @@ namespace WebApplication1
         {
             Session["E-mail"] = null;
             Session["Password"] = null;
+            Session["Buyitems"] = null;
+            Session["Amount"] = null;
             Response.Redirect("index.aspx");
         }
 

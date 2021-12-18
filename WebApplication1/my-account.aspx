@@ -47,7 +47,7 @@
                                     <div class="col-md-12">
                                         <asp:LinkButton ID="LinkButton7" runat="server" class="btn" OnClick="LinkButton7_Click">Save Changes</asp:LinkButton>
                                     </div>
-          </div>
+                                    </div>
                                 <div class="row">
                                        <div class="col-md-6">
                                         <asp:LinkButton ID="LinkButton8" runat="server" class="btn" OnClick="LinkButton8_Click">Delete Account</asp:LinkButton>
