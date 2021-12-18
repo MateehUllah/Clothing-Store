@@ -242,6 +242,48 @@ namespace WebApplication1.DAL
 
             return flag;
         }
+        public int CheckOut(string OrderNumber,string Fname, string Lname,string Email,string Mobile,string Address,string City,string Country,string State,string Zip,string Gtotal)
+        {
+            int flag = 0;
+            SqlConnection con = new SqlConnection(strcon);
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmd;
+            try
+            {
+                int total = Int16.Parse(Gtotal);
+                cmd = new SqlCommand("AddCheckOut", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@oid", OrderNumber);
+                cmd.Parameters.AddWithValue("@First_Name", Fname);
+                cmd.Parameters.AddWithValue("@Last_Name", Lname);
+                cmd.Parameters.AddWithValue("@Email", Email);
+                cmd.Parameters.AddWithValue("@MobileNo", Mobile);
+                cmd.Parameters.AddWithValue("@Address", Address);
+                cmd.Parameters.AddWithValue("@city", City);
+                cmd.Parameters.AddWithValue("@country", Country);
+                cmd.Parameters.AddWithValue("@state", State);
+                cmd.Parameters.AddWithValue("@zip",Zip);
+                cmd.Parameters.AddWithValue("@grandtotal",total);
+                cmd.ExecuteNonQuery();
+                flag = 2;
+            }
+            #pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+            #pragma warning restore CS0168 // Variable is declared but never used
+            {
+                flag = 1;
+                return flag;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return flag;
+        }
         public int DeleteAccount(string Email)
         {
             int flag = 0;

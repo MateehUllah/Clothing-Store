@@ -19,6 +19,21 @@ Quantity int not null,
 [Description] varchar(100)
 );
 go
+Create Table CheckOut(oid varchar(40) not null,
+First_Name varchar(20) not null,
+Last_Name varchar(20) not null,
+Email nchar(50) not null,
+MobileNo varchar(20) not null,
+[Address] varchar(100) not null,
+city varchar(25) not null,
+country varchar(20) not null,
+[state] varchar(15) not null,
+zip varchar(10) not null,
+grandtotal int not null,
+FOREIGN KEY (Email) REFERENCES Login_Register(Email),
+Primary Key(oid,Email))
+
+go
 Create Procedure SignIn
 	@First_Name varchar(20),
 	@Last_Name varchar(20),
@@ -102,5 +117,23 @@ Create Procedure UpdatePassAccount
 			Update Login_Register set [Password]=@NPass where Email=@Email
 		end
 go
+
+Create Procedure AddCheckOut
+	@oid varchar(40),
+	@First_Name varchar(20),
+	@Last_Name varchar(20),
+	@Email nchar(50),
+	@MobileNo varchar(20),
+	@Address varchar(100),
+	@city varchar(25),
+	@country varchar(20),
+	@state varchar(15),
+	@zip varchar(10),
+	@grandtotal int
+	as 
+		begin
+		insert CheckOut(oid,First_Name,Last_Name,Email,MobileNo,[Address],city,country,[state],zip,grandtotal) values (@oid,@First_Name,@Last_Name,@Email,@MobileNo,@Address,@city,@country,@state,@zip,@grandtotal);
+		end
 Select * from Login_Register
 select * from Product
+select * from CheckOut
