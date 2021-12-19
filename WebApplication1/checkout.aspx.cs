@@ -76,9 +76,9 @@ namespace WebApplication1
                     string Country = DropDownList1.SelectedValue.Trim().ToString();
                     string State = TextBox7.Text.Trim().ToString();
                     string Zip = TextBox8.Text.Trim().ToString();
-  
                     string Gtotal = TextBox10.Text.Trim().ToString();
-                    int flag =dal.CheckOut(OrderNumber, Fname, Lname, Email, Mobile, Address, City, Country, State, Zip, Gtotal);
+
+                    int flag = dal.CheckOut(OrderNumber, Fname, Lname, Email, Mobile, Address, City,Country, State, Zip, Gtotal);
                     if (flag == 1)
                     {
                         Response.Write("<script>alert('Error');</script>");

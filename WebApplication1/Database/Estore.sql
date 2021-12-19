@@ -118,7 +118,7 @@ Create Procedure UpdatePassAccount
 		end
 go
 
-Create Procedure AddCheckOut
+Create Procedure PlaceOrder
 	@oid varchar(40),
 	@First_Name varchar(20),
 	@Last_Name varchar(20),

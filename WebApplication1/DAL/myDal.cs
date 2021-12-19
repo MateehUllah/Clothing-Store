@@ -254,7 +254,7 @@ namespace WebApplication1.DAL
             try
             {
                 int total = Int16.Parse(Gtotal);
-                cmd = new SqlCommand("AddCheckOut", con);
+                cmd = new SqlCommand("PlaceOrder", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@oid", OrderNumber);
                 cmd.Parameters.AddWithValue("@First_Name", Fname);
@@ -274,8 +274,8 @@ namespace WebApplication1.DAL
             catch (Exception ex)
             #pragma warning restore CS0168 // Variable is declared but never used
             {
-                flag = 1;
-                return flag;
+               flag = 1;
+               return flag;
             }
             finally
             {
