@@ -157,5 +157,15 @@ namespace WebApplication1
         {
             Response.Redirect("checkout.aspx");
         }
+
+        protected void LinkButton3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("product-list.aspx");
+        }
+
+        protected void LinkButton4_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
+        }
     }
 }

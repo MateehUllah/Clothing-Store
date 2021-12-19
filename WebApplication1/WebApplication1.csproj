@@ -114,6 +114,7 @@
     <Content Include="lib\slick\slick.css" />
     <Content Include="lib\slick\slick.js" />
     <Content Include="lib\slick\slick.min.js" />
+    <Content Include="Review.aspx" />
     <Content Include="Web.config" />
     <Content Include="index.aspx" />
     <Content Include="cart.aspx" />
@@ -129,6 +130,13 @@
   <ItemGroup>
     <Compile Include="DAL\myDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Review.aspx.cs">
+      <DependentUpon>Review.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Review.aspx.designer.cs">
+      <DependentUpon>Review.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

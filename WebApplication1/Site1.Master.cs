@@ -28,6 +28,7 @@ namespace WebApplication1
                     LinkButton6.Visible = false;
                     LinkButton4.Visible = false;
                     LinkButton5.Visible = false;
+                   LinkButton7.Visible = false;
                 }
             }
             else
@@ -36,7 +37,7 @@ namespace WebApplication1
                 LinkButton4.Visible = false;
                 LinkButton5.Visible = false;
                 LinkButton6.Visible = false;
-
+                LinkButton7.Visible = false;
             }
         }
 
@@ -71,7 +72,7 @@ namespace WebApplication1
         }
         protected void LinkButton7_Click(object sender, EventArgs e)
         {
-            Response.Redirect("wishlist.aspx");
+            Response.Redirect("Review.aspx");
         }
         protected void LinkButton9_Click(object sender, EventArgs e)
         {

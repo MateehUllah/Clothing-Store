@@ -6,8 +6,10 @@
         <div class="breadcrumb-wrap">
             <div class="container-fluid">
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.aspx">Home</a></li>
-                    <li class="breadcrumb-item"><a href="product-list.aspx">Products</a></li>
+                    <li class="breadcrumb-item">
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Home</asp:LinkButton></li>
+                    <li class="breadcrumb-item">
+                        <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Products</asp:LinkButton></li>
                     <li class="breadcrumb-item active">Admin Panel</li>
                 </ul>
             </div>

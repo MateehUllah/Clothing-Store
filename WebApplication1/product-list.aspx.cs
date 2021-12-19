@@ -56,5 +56,15 @@ namespace WebApplication1
                 Response.Write("<script> alert('Kindly Login with your account'); </script>");
             }
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
+        }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("product-list.aspx");
+        }
     }
 }

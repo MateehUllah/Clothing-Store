@@ -167,5 +167,15 @@ namespace WebApplication1
             Session["Password"] = null;
             Response.Redirect("index.aspx");
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
+        }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("product-list.aspx");
+        }
     }
 }
