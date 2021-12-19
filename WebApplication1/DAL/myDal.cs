@@ -313,6 +313,38 @@ namespace WebApplication1.DAL
 
             return flag;
         }
+        public int AddReview(string ProductID, string Email, string feedback)
+        {
+            int flag = 0;
+            SqlConnection con = new SqlConnection(strcon);
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmd;
+            try
+            {
+                cmd = new SqlCommand("AddReview", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ProductID",ProductID);
+                cmd.Parameters.AddWithValue("@Email", Email);
+                cmd.Parameters.AddWithValue("@Feedback", feedback);
+                cmd.ExecuteNonQuery();
+                flag = 2;
+            }
+            #pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+            #pragma warning restore CS0168 // Variable is declared but never used
+            {
+                flag = 1;
+                return flag;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return flag;
+        }
     }
     
 }

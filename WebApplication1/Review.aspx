@@ -8,9 +8,9 @@
         <div class="container-fluid">
             <ul class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <asp:LinkButton ID="LinkButton1" runat="server">Home</asp:LinkButton></li>
+                    <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Home</asp:LinkButton></li>
                 <li class="breadcrumb-item">
-                    <asp:LinkButton ID="LinkButton2" runat="server">Products</asp:LinkButton></li>
+                    <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Products</asp:LinkButton></li>
                 <li class="breadcrumb-item active">Review</li>
             </ul>
         </div>
@@ -34,7 +34,7 @@
                             <asp:TextBox class="form-control" ID="TextBox3" type="text" placeholder="Review" runat="server"></asp:TextBox>
                         </div>
                         <div class="col-md-12">
-                            <asp:Button ID="Add_Review" class="btn" runat="server" Text="Submit" />
+                            <asp:Button ID="Add_Review" class="btn" runat="server" Text="Submit" OnClick="Add_Review_Click" />
                         </div>
                     </div>
                 </div>

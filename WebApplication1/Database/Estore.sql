@@ -10,6 +10,14 @@ MobileNo varchar(20),
 [Password] varchar(8) not null
 );
 go
+Create Table Review(ProductID varchar(10) not null,
+Email nchar(50) not null,
+Feedback varchar(100) not null,
+FOREIGN KEY (Email) REFERENCES Login_Register(Email),
+FOREIGN KEY (ProductID) REFERENCES Product(ProductID),
+PRIMARY KEY(Email,ProductID)
+);
+
 go
 CREATE Table Product(ProductID varchar(10) not null  Primary Key,
 ProductName varchar(20) not null,
@@ -134,6 +142,16 @@ Create Procedure PlaceOrder
 		begin
 		insert CheckOut(oid,First_Name,Last_Name,Email,MobileNo,[Address],city,country,[state],zip,grandtotal) values (@oid,@First_Name,@Last_Name,@Email,@MobileNo,@Address,@city,@country,@state,@zip,@grandtotal);
 		end
+Create Procedure AddReview
+  @ProductID varchar(10),
+  @Email nchar(50),
+  @Feedback varchar(100)
+  as 
+  begin
+	insert Review(ProductID,Email,Feedback) VALUES (@ProductID,@Email,@Feedback);
+  end
+
 Select * from Login_Register
 select * from Product
 select * from CheckOut
+Select * from Review
