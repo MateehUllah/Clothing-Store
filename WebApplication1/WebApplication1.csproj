@@ -125,6 +125,7 @@
     <Content Include="product-detail.aspx" />
     <Content Include="product-list.aspx" />
     <Content Include="Admin-panel.aspx" />
+    <Content Include="Feedback.aspx" />
     <Content Include="wishlist.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -206,6 +207,13 @@
     </Compile>
     <Compile Include="Admin-panel.aspx.designer.cs">
       <DependentUpon>Admin-panel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback.aspx.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Feedback.aspx.designer.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
     </Compile>
     <Compile Include="wishlist.aspx.cs">
       <DependentUpon>wishlist.aspx</DependentUpon>

@@ -98,5 +98,9 @@ namespace WebApplication1
         {
             Response.Redirect("Admin-panel.aspx");
         }
+        protected void LinkButton13_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Feedback.aspx");
+        }
     }
 }

@@ -1,10 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="product-detail.aspx.cs" Inherits="WebApplication1.WebForm7" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Feedback.aspx.cs" Inherits="WebApplication1.WebForm3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .auto-style1 {
-            height: 27px;
-        }
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
      <!-- Breadcrumb Start -->
@@ -15,7 +10,7 @@
                         <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Home</asp:LinkButton></li>
                     <li class="breadcrumb-item">
                         <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Products</asp:LinkButton></li>
-                    <li class="breadcrumb-item active">Product Detail</li>
+                    <li class="breadcrumb-item active">Feedback</li>
                 </ul>
             </div>
         </div>
@@ -25,42 +20,23 @@
         <div class="product-detail">
             <div class="container-fluid">
                 <div class="row">
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EstoreConnectionString %>" SelectCommand="SELECT [ProductID], [ProductName], [Price], [imgpath], [Description] FROM [Product]"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EstoreConnectionString %>" SelectCommand="SELECT [ProductID], [Feedback] FROM [Review]"></asp:SqlDataSource>
                     <div class="col-lg-8">
-                        <asp:DataList ID="DataList1" runat="server" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataSourceID="SqlDataSource1" GridLines="Both">
-                            <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
-                            <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
-                            <ItemStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
-                            <ItemTemplate>
-                                <table class="w-100">
-                                    <tr>
-                                        <td class="auto-style1" style="text-align: center">ProductID:
-                                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("ProductID") %>'></asp:Label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">
-                                            <asp:Label ID="Label2" runat="server" style="text-align: center" Text='<%# Eval("ProductName") %>'></asp:Label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">
-                                            <asp:Image ID="Image1" runat="server" Height="174px" ImageUrl='<%# Eval("imgpath") %>' Width="231px" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">Price:<asp:Label ID="Label3" runat="server" Text='<%# Eval("Price") %>'></asp:Label>
-                                            $</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">
-                                            <asp:Label ID="Label4" runat="server" style="text-align: center" Text='<%# Eval("Description") %>'></asp:Label>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </ItemTemplate>
-                            <SelectedItemStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
-                        </asp:DataList>
+                        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" HorizontalAlign="Center">
+                            <AlternatingRowStyle BackColor="#CCCCCC" />
+                            <Columns>
+                                <asp:BoundField DataField="ProductID" HeaderText="ProductID" SortExpression="ProductID" />
+                                <asp:BoundField DataField="Feedback" HeaderText="Feedback" SortExpression="Feedback" />
+                            </Columns>
+                            <FooterStyle BackColor="#CCCCCC" />
+                            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                            <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                            <SortedAscendingHeaderStyle BackColor="#808080" />
+                            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                            <SortedDescendingHeaderStyle BackColor="#383838" />
+                        </asp:GridView>
                     </div>
                     <!-- Side Bar Start -->
                     <div class="col-lg-4 sidebar">
@@ -96,6 +72,7 @@
         </div>
         <!-- Product Detail End -->
         
+
         <!-- Brand Start -->
         <div class="brand">
             <div class="container-fluid">
@@ -109,5 +86,4 @@
                 </div>
             </div>
         </div>
-        <!-- Brand End -->
 </asp:Content>
