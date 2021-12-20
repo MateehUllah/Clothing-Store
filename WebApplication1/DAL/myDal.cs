@@ -345,6 +345,66 @@ namespace WebApplication1.DAL
             }
             return flag;
         }
+        public int BuyerChat(string Email,string text)
+        {
+            int flag = 0;
+            SqlConnection con = new SqlConnection(strcon);
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmd;
+            try
+            {
+                cmd = new SqlCommand("Buyer", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Email", Email);
+                cmd.Parameters.AddWithValue("@text", text);
+                cmd.ExecuteNonQuery();
+                flag = 2;
+            }
+            catch (Exception ex)
+            {
+                flag = 1;
+                return flag;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return flag;
+        }
+        public int SellerChat(string Email,string text)
+        {
+            int flag = 0;
+            SqlConnection con = new SqlConnection(strcon);
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmd;
+            try
+            {
+                cmd = new SqlCommand("Seller", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Email", Email);
+                cmd.Parameters.AddWithValue("@text", text);
+                cmd.ExecuteNonQuery();
+                flag = 2;
+            }
+            catch (Exception ex)
+            {
+                flag = 1;
+                return flag;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return flag;
+        }
     }
     
 }

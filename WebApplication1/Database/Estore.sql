@@ -1,5 +1,6 @@
 GO
 create database Estore;
+
 GO
 USE Estore;
 go
@@ -10,13 +11,7 @@ MobileNo varchar(20),
 [Password] varchar(8) not null
 );
 go
-Create Table Review(ProductID varchar(10) not null,
-Email nchar(50) not null,
-Feedback varchar(100) not null,
-FOREIGN KEY (Email) REFERENCES Login_Register(Email),
-FOREIGN KEY (ProductID) REFERENCES Product(ProductID),
-PRIMARY KEY(Email,ProductID)
-);
+
 
 go
 CREATE Table Product(ProductID varchar(10) not null  Primary Key,
@@ -40,7 +35,26 @@ zip varchar(10) not null,
 grandtotal int not null,
 FOREIGN KEY (Email) REFERENCES Login_Register(Email),
 Primary Key(oid,Email))
-
+go
+Create Table Review(ProductID varchar(10) not null,
+Email nchar(50) not null,
+Feedback varchar(100) not null,
+FOREIGN KEY (Email) REFERENCES Login_Register(Email),
+FOREIGN KEY (ProductID) REFERENCES Product(ProductID),
+PRIMARY KEY(Email,ProductID)
+);
+go
+Create Table BuyerChat(
+Email nchar(50) not null,
+[Message] varchar(100) not null
+primary key(Email,[Message])
+FOREIGN KEY (Email) REFERENCES Login_Register(Email));
+go
+Create Table SellerChat(
+Email nchar(50) not null,
+[Message] varchar(100) not null
+primary key(Email,[Message])
+FOREIGN KEY (Email) REFERENCES Login_Register(Email));
 go
 Create Procedure SignIn
 	@First_Name varchar(20),
@@ -125,7 +139,7 @@ Create Procedure UpdatePassAccount
 			Update Login_Register set [Password]=@NPass where Email=@Email
 		end
 go
-
+go
 Create Procedure PlaceOrder
 	@oid varchar(40),
 	@First_Name varchar(20),
@@ -142,6 +156,7 @@ Create Procedure PlaceOrder
 		begin
 		insert CheckOut(oid,First_Name,Last_Name,Email,MobileNo,[Address],city,country,[state],zip,grandtotal) values (@oid,@First_Name,@Last_Name,@Email,@MobileNo,@Address,@city,@country,@state,@zip,@grandtotal);
 		end
+go
 Create Procedure AddReview
   @ProductID varchar(10),
   @Email nchar(50),
@@ -150,8 +165,25 @@ Create Procedure AddReview
   begin
 	insert Review(ProductID,Email,Feedback) VALUES (@ProductID,@Email,@Feedback);
   end
+go
+Create Procedure Seller
+@Email nchar(50),
+@Text varchar(100)
+as begin
+Insert SellerChat(Email,[Message]) VALUES(@Email,@Text);
+end
+
+GO
+Create Procedure Buyer
+@Email nchar(50),
+@Text varchar(100)
+as begin
+Insert BuyerChat(Email,[Message]) VALUES(@Email,@Text);
+end
 
 Select * from Login_Register
 select * from Product
 select * from CheckOut
 Select * from Review
+select * from BuyerChat
+select * from SellerChat 

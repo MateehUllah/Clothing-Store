@@ -21,7 +21,12 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-6">
-                       
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EstoreConnectionString %>" SelectCommand="SELECT [Message] FROM [SellerChat]"></asp:SqlDataSource>
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+                            <Columns>
+                                <asp:BoundField DataField="Message" HeaderText="Message" SortExpression="Message" />
+                            </Columns>
+                        </asp:GridView>
                     </div>
                     <div class="col-lg-6">
                         <div class="contact-form">
