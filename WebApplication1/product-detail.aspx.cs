@@ -53,5 +53,20 @@ namespace WebApplication1
         {
             Response.Redirect("https://edenrobe.com/");
         }
+
+        protected void LinkButton9_Click(object sender, EventArgs e)
+        {
+            DataList1.DataSourceID = null;
+            if(DropDownList1.SelectedItem.Text=="High to low")
+            {
+                DataList1.DataSource= SqlDataSource3;
+                DataList1.DataBind();
+            }
+            else
+            {
+                DataList1.DataSource = SqlDataSource2;
+                DataList1.DataBind();
+            }
+        }
     }
 }

@@ -27,16 +27,18 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="col-md-4">
+                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:EstoreConnectionString %>" SelectCommand="SELECT [ProductID], [ProductName], [Price], [imgpath], [Description] FROM [Product] ORDER BY [Price]"></asp:SqlDataSource><!---Asc-->
+                            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:EstoreConnectionString %>" SelectCommand="SELECT [ProductID], [ProductName], [Price], [Description], [imgpath] FROM [Product] ORDER BY [Price] DESC"></asp:SqlDataSource>
                                     <asp:Label ID="Label6" runat="server" placeholder="Sort by price"></asp:Label>
                                     <asp:DropDownList class="custom-select" ID="DropDownList1" runat="server">
-                                        <asp:ListItem Selected="True">High to low</asp:ListItem>
-                                        <asp:ListItem>low to high</asp:ListItem>
+                                        <asp:ListItem Selected="True" Text="High to low">High to low</asp:ListItem>
+                                        <asp:ListItem Text="low to high">low to high</asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
-                        <div class="col-md-4"> <asp:LinkButton ID="LinkButton9" class="btn" runat="server">Sort</asp:LinkButton></div>
-                       
+                        <div class="col-md-4">
+                            <asp:LinkButton ID="LinkButton9" class="btn" runat="server" OnClick="LinkButton9_Click">Sort</asp:LinkButton></div>
+                       </div>
                         </div>
-                </div>
                 <div class="row">
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EstoreConnectionString %>" SelectCommand="SELECT [ProductID], [ProductName], [Price], [imgpath], [Description] FROM [Product]"></asp:SqlDataSource>
                     <div class="col-lg-8">
