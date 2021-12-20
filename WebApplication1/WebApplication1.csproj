@@ -127,7 +127,6 @@
     <Content Include="Admin-panel.aspx" />
     <Content Include="Feedback.aspx" />
     <Content Include="BuyerContact.aspx" />
-    <Content Include="wishlist.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\myDal.cs" />
@@ -222,13 +221,6 @@
     </Compile>
     <Compile Include="BuyerContact.aspx.designer.cs">
       <DependentUpon>BuyerContact.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="wishlist.aspx.cs">
-      <DependentUpon>wishlist.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="wishlist.aspx.designer.cs">
-      <DependentUpon>wishlist.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
