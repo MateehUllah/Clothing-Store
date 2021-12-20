@@ -25,6 +25,19 @@
         <div class="product-detail">
             <div class="container-fluid">
                 <div class="row">
+                    <div class="col-lg-8">
+                        <div class="col-md-4">
+                                    <asp:Label ID="Label6" runat="server" placeholder="Sort by price"></asp:Label>
+                                    <asp:DropDownList class="custom-select" ID="DropDownList1" runat="server">
+                                        <asp:ListItem Selected="True">High to low</asp:ListItem>
+                                        <asp:ListItem>low to high</asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+                        <div class="col-md-4"> <asp:LinkButton ID="LinkButton9" class="btn" runat="server">Sort</asp:LinkButton></div>
+                       
+                        </div>
+                </div>
+                <div class="row">
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EstoreConnectionString %>" SelectCommand="SELECT [ProductID], [ProductName], [Price], [imgpath], [Description] FROM [Product]"></asp:SqlDataSource>
                     <div class="col-lg-8">
                         <asp:DataList ID="DataList1" runat="server" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataSourceID="SqlDataSource1" GridLines="Both">

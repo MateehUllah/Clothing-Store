@@ -68,7 +68,8 @@
                             <div class="dropdown-menu">
                                  <asp:LinkButton ID="LinkButton7" class="dropdown-item" runat="server" OnClick="LinkButton7_Click">Add Review</asp:LinkButton>
                                  <asp:LinkButton ID="LinkButton13" class="dropdown-item" runat="server" OnClick="LinkButton13_Click">Feedbacks</asp:LinkButton>
-                                 <asp:LinkButton ID="LinkButton9" class="dropdown-item" runat="server" OnClick="LinkButton9_Click">Contact Us</asp:LinkButton>
+                                 <asp:LinkButton ID="LinkButton9" class="dropdown-item" runat="server" OnClick="LinkButton9_Click">Seller Contact</asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton14" class="dropdown-item" runat="server" OnClick="LinkButton14_Click">Buyer Contact</asp:LinkButton>
                             </div>
                             </div>
                         </div>

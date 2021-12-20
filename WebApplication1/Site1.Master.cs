@@ -21,6 +21,7 @@ namespace WebApplication1
                 if (Session["E-mail"].ToString() != str && Session["Password"].ToString() != str1)
                 {
                     LinkButton12.Visible = false;
+                    LinkButton9.Visible = false;
                 }
                 else
                 {
@@ -28,7 +29,8 @@ namespace WebApplication1
                     LinkButton6.Visible = false;
                     LinkButton4.Visible = false;
                     LinkButton5.Visible = false;
-                   LinkButton7.Visible = false;
+                    LinkButton7.Visible = false;
+                    LinkButton14.Visible = false;
                 }
             }
             else
@@ -38,6 +40,8 @@ namespace WebApplication1
                 LinkButton5.Visible = false;
                 LinkButton6.Visible = false;
                 LinkButton7.Visible = false;
+                LinkButton9.Visible = false;
+                LinkButton14.Visible = false;
             }
         }
 
@@ -76,7 +80,7 @@ namespace WebApplication1
         }
         protected void LinkButton9_Click(object sender, EventArgs e)
         {
-            Response.Redirect("contact.aspx");
+            Response.Redirect("SellerContact.aspx");
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)
@@ -101,6 +105,11 @@ namespace WebApplication1
         protected void LinkButton13_Click(object sender, EventArgs e)
         {
             Response.Redirect("Feedback.aspx");
+        }
+
+        protected void LinkButton14_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("BuyerContact.aspx");
         }
     }
 }

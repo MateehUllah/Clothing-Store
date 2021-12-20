@@ -120,12 +120,13 @@
     <Content Include="cart.aspx" />
     <Content Include="login.aspx" />
     <Content Include="checkout.aspx" />
-    <Content Include="contact.aspx" />
+    <Content Include="SellerContact.aspx" />
     <Content Include="my-account.aspx" />
     <Content Include="product-detail.aspx" />
     <Content Include="product-list.aspx" />
     <Content Include="Admin-panel.aspx" />
     <Content Include="Feedback.aspx" />
+    <Content Include="BuyerContact.aspx" />
     <Content Include="wishlist.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -173,12 +174,12 @@
     <Compile Include="checkout.aspx.designer.cs">
       <DependentUpon>checkout.aspx</DependentUpon>
     </Compile>
-    <Compile Include="contact.aspx.cs">
-      <DependentUpon>contact.aspx</DependentUpon>
+    <Compile Include="SellerContact.aspx.cs">
+      <DependentUpon>SellerContact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="contact.aspx.designer.cs">
-      <DependentUpon>contact.aspx</DependentUpon>
+    <Compile Include="SellerContact.aspx.designer.cs">
+      <DependentUpon>SellerContact.aspx</DependentUpon>
     </Compile>
     <Compile Include="my-account.aspx.cs">
       <DependentUpon>my-account.aspx</DependentUpon>
@@ -214,6 +215,13 @@
     </Compile>
     <Compile Include="Feedback.aspx.designer.cs">
       <DependentUpon>Feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BuyerContact.aspx.cs">
+      <DependentUpon>BuyerContact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BuyerContact.aspx.designer.cs">
+      <DependentUpon>BuyerContact.aspx</DependentUpon>
     </Compile>
     <Compile Include="wishlist.aspx.cs">
       <DependentUpon>wishlist.aspx</DependentUpon>
